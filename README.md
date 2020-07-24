@@ -39,4 +39,8 @@ returned when you run the example. If this is the case you will need to download
 'ssl.ca.location': 'cloudkarafka.ca'
 ```
 This should resolve the error and allow for successful connection to the server.
-# python-karafka-test
+
+*********************************
+
+karafka 안내문을 보고 따라해보기
+
