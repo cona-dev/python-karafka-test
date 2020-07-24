@@ -4,18 +4,18 @@ import os
 from confluent_kafka import Producer
 
 if __name__ == '__main__':
-    topic = os.environ['CLOUDKARAFKA_TOPIC'].split(",")[0]
+    topic = os.environ['it5v25et-testTopic'].split(",")[0]
 
     # Consumer configuration
     # See https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
     conf = {
-        'bootstrap.servers': os.environ['CLOUDKARAFKA_BROKERS'],
+        'bootstrap.servers': os.environ['rocket-01.srvs.cloudkafka.com:9094,rocket-02.srvs.cloudkafka.com:9094,rocket-03.srvs.cloudkafka.com:9094'],
         'session.timeout.ms': 6000,
         'default.topic.config': {'auto.offset.reset': 'smallest'},
         'security.protocol': 'SASL_SSL',
 	'sasl.mechanisms': 'SCRAM-SHA-256',
-        'sasl.username': os.environ['CLOUDKARAFKA_USERNAME'],
-        'sasl.password': os.environ['CLOUDKARAFKA_PASSWORD']
+        'sasl.username': os.environ['it5v25et'],
+        'sasl.password': os.environ['xDjmU_mpuzRcoux8pjFkPJAmgutBU0ar']
     }
 
     p = Producer(**conf)
